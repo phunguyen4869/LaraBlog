@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\RegisterController;
+use App\Http\Controllers\Admin\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->name('home');
+
+Route::prefix('admin')->group(function () {
+    Route::get('login', [LoginController::class, 'index']);
+    Route::post('login', [LoginController::class, 'login']);
+
+    Route::get('register', [RegisterController::class, 'index']);
+    Route::post('register', [RegisterController::class, 'create']);
+
+    Route::get('/dashboard', function () {
+        return view('Admin.dashboard')->name('dashboard');
+    });
+    Route::get('/slider/list', [SliderController::class, 'index']);
 });
