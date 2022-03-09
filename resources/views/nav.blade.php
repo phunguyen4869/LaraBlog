@@ -21,6 +21,23 @@
                         </li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        @if (Auth::check())
+                        <li class="has-dropdown">
+                            <a>{{Auth::user()->name}}</a>
+                            <ul class="dropdown">
+                                <li><a href="{{url('admin/dashboard')}}">Dashboard</a></li>
+                                <li><a href="{{url('admin/logout')}}">Logout</a></li>
+                            </ul>
+                        </li>
+                        @else
+                        <li class="has-dropdown">
+                            <a>User</a>
+                            <ul class="dropdown">
+                                <li><a href="{{url('admin/login')}}">Login</a></li>
+                                <li><a href="{{url('admin/register')}}">Register</a></li>
+                            </ul>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </div>

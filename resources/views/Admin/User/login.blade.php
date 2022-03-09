@@ -6,7 +6,7 @@
             <!-- /.login-logo -->
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
-                    <a href="../../index2.html"
+                    <a href="{{url('/')}}"
                     class="h1"><b>Admin</b>Blog</a>
                 </div>
                 <div class="card-body">

@@ -6,15 +6,16 @@
             <div class="card-header">
                 <h3 class="card-title">Bordered Table</h3>
             </div>
+            @include('Admin.alert')
             <!-- /.card-header -->
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Task</th>
-                            <th>Progress</th>
-                            <th style="width: 40px">Label</th>
+                            <th style="width: 10px">ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th style="width: 120px">Action</th>
                         </tr>
                     </thead>
                     <tbody>

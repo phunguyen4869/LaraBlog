@@ -3,10 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\SliderServices;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+    protected $slider;
+
+    public function __construct(SliderServices $slider)
+    {
+        $this->slider = $slider;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +31,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Slider.create');
     }
 
     /**
@@ -32,10 +39,17 @@ class SliderController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request)
     {
-        //
+        $result = $this->slider->create($request);
+
+        if ($result) {
+            return redirect()->route('slider.index')->with('success', 'Slider created successfully');
+        } else {
+            return redirect()->route('slider.index')->with('error', 'Slider not created');
+        }
     }
 
     /**
