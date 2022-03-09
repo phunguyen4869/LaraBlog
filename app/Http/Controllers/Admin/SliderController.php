@@ -48,7 +48,7 @@ class SliderController extends Controller
         if ($result) {
             return redirect()->route('slider.index')->with('success', 'Slider created successfully');
         } else {
-            return redirect()->route('slider.index')->with('error', 'Slider not created');
+            return redirect()->route('slider.index')->with('error', 'Slider created failed');
         }
     }
 
