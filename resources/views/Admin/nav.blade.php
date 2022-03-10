@@ -36,6 +36,9 @@
           </form>
         </div>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{url('admin/logout')}}" class="nav-link">Logout</a>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->

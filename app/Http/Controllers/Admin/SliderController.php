@@ -21,7 +21,11 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('Admin.Slider.list');
+        $sliders = $this->slider->getAll();
+
+        return view('Admin.Slider.list', [
+            'sliders' => $sliders
+        ]);
     }
 
     /**
@@ -71,7 +75,11 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slider = $this->slider->getById($id);
+
+        return view('Admin.Slider.edit', [
+            'slider' => $slider
+        ]);
     }
 
     /**
@@ -83,7 +91,13 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $result = $this->slider->update($request, $id);
+
+        if ($result) {
+            return redirect()->route('slider.index')->with('success', 'Slider updated successfully');
+        } else {
+            return redirect()->back()->with('error', 'Slider updated failed');
+        }
     }
 
     /**
@@ -92,8 +106,19 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $result = $this->slider->delete($request->id);
+
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Slider deleted successfully'
+            ]);
+        } else {
+            return response()->json([
+                'error' => true,
+            ]);
+        }
     }
 }

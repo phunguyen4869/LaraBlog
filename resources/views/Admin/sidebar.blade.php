@@ -88,12 +88,6 @@
                                   <p>Add slider</p>
                               </a>
                           </li>
-                          <li class="nav-item">
-                              <a href="./index3.html" class="nav-link">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                  <p>Edit slider</p>
-                              </a>
-                          </li>
                       </ul>
                   </li>
               </ul>

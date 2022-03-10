@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\LoginController;
-use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\Admin\RegisterController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ use App\Http\Controllers\Admin\UploadController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('about', [HomeController::class, 'about'])->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [LoginController::class, 'index'])->name('login');
@@ -28,7 +29,6 @@ Route::prefix('admin')->group(function () {
 
     Route::get('register', [RegisterController::class, 'index']);
     Route::post('register', [RegisterController::class, 'create']);
-
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -43,9 +43,10 @@ Route::prefix('admin')->group(function () {
             Route::get('create', [SliderController::class, 'create']);
             Route::post('create', [SliderController::class, 'store']);
 
-            Route::get('{id}/edit', [SliderController::class, 'edit']);
-            Route::put('{id}', [SliderController::class, 'update']);
-            Route::delete('{id}', [SliderController::class, 'destroy']);
+            Route::get('edit/{id}', [SliderController::class, 'edit']);
+            Route::post('edit/{id}', [SliderController::class, 'update']);
+
+            Route::delete('destroy', [SliderController::class, 'destroy']);
         });
     });
 });

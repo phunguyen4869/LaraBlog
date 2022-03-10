@@ -5,91 +5,26 @@
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                    <li style="background-image: url(images/img_bg_1.jpg);">
-                        <div class="overlay-gradient"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div
-                                    class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>Not Every Project Needs To Be Perfect
-                                        </h1>
-                                        <h2>Free html5 templates Made by <a
-                                                href="http://freehtml5.co/"
-                                                target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo"
-                                                href="#"></i> View Demo</a> <a
-                                                class="btn btn-primary btn-learn">Learn
-                                                More</a></p>
+                    @foreach ($sliders as $slider)
+                        <li style="background-image: url({{ $slider->image }});">
+                            <div class="overlay-gradient"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div
+                                        class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
+                                        <div class="slider-text-inner">
+                                            <h1>{{ $slider->title }}</h1>
+                                            <h2>{{ $slider->description }}</h2>
+                                            <p><a class="btn btn-primary btn-demo"
+                                                    href="#"></i> View Demo</a> <a
+                                                    class="btn btn-primary btn-learn">Learn
+                                                    More</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url(images/img_bg_2.jpg);">
-                        <div class="overlay-gradient"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div
-                                    class="col-md-6 col-md-offset-3 col-md-push-3 slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>WordPress Theme For People Who Tell
-                                            Stories</h1>
-                                        <h2>Free html5 templates Made by <a
-                                                href="http://freehtml5.co/"
-                                                target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo"
-                                                href="#"></i> View Demo</a> <a
-                                                class="btn btn-primary btn-learn">Learn
-                                                More</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url(images/img_bg_3.jpg);">
-                        <div class="overlay-gradient"></div>
-                        <div class="container-fluids">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 slider-text">
-                                    <div class="slider-text-inner text-center">
-                                        <h1>What Would You Like To Learn?</h1>
-                                        <h2>Free html5 templates Made by <a
-                                                href="http://freehtml5.co/"
-                                                target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo"
-                                                href="#"></i> View Demo</a> <a
-                                                class="btn btn-primary btn-learn">Learn
-                                                More</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="background-image: url(images/img_bg_4.jpg);">
-                        <div class="overlay-gradient"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div
-                                    class="col-md-6 col-md-offset-3 col-md-push-3 slider-text">
-                                    <div class="slider-text-inner">
-                                        <h1>I Love to Tell My Story</h1>
-                                        <h2>Free html5 templates Made by <a
-                                                href="http://freehtml5.co/"
-                                                target="_blank">freehtml5.co</a>
-                                        </h2>
-                                        <p><a class="btn btn-primary btn-demo"
-                                                href="#"></i> View Demo</a> <a
-                                                class="btn btn-primary btn-learn">Learn
-                                                More</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </aside>
@@ -101,10 +36,11 @@
                             <i class="icon-diamond"></i>
                         </span>
                         <div class="desc">
-                            <h3><a href="#">Brand Identity</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga
-                                molestias accusamus alias autem provident. Odit ab
-                                aliquam dolor eius.</p>
+                            <h3><a href="#">Xây dựng thương hiệu bản thân</a></h3>
+                            <p>Mục đích của tôi khi làm ra blog này nhằm xây dựng và
+                                khẳng định khả năng của bản thân. Tuy có thể còn
+                                nhiều thiếu sót nhưng cũng không vì thế mà ngừng học
+                                hỏi và cải thiện bản thân.</p>
                         </div>
                     </div>
                 </div>
@@ -114,10 +50,12 @@
                             <i class="icon-lab2"></i>
                         </span>
                         <div class="desc">
-                            <h3><a href="#">Web Design &amp; UI</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga
-                                molestias accusamus alias autem provident. Odit ab
-                                aliquam dolor eius.</p>
+                            <h3><a href="#">Tìm hiểu và thiết kế website backend</a>
+                            </h3>
+                            <p>Trong suốt quá trình học tập và làm việc thì tôi nhận
+                                ra rằng khi làm các sản phẩm thực tế sẽ tạo ra cho
+                                bản thân niềm đam mê hứng khởi và yêu thích với công việc này.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -127,10 +65,14 @@
                             <i class="icon-settings"></i>
                         </span>
                         <div class="desc">
-                            <h3><a href="#">Web Development</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga
-                                molestias accusamus alias autem provident. Odit ab
-                                aliquam dolor eius.</p>
+                            <h3><a href="#">Tìm cách cải tiến và đơn giản hóa công
+                                    việc</a></h3>
+                            <p>Khi thực hiện các sản phẩm thực tế tôi cũng nhận ra
+                                rằng chúng ta có thể sử dụng những phương thức đã
+                                được
+                                xây dựng sẵn để cải thiện tốc độ làm việc, đồng thời
+                                cũng có thể tái sử dụng và nâng cấp những phương
+                                thức đã làm trước đó trở nên tốt hơn.</p>
                         </div>
                     </div>
                 </div>

@@ -3,11 +3,11 @@
         <div class="top-menu">
             <div class="row">
                 <div class="col-xs-2">
-                    <div id="fh5co-logo"><a href="index.html">Blog</a></div>
+                    <div id="fh5co-logo"><a href="{{url('/')}}">Blog</a></div>
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a>
+                        <li><a href="{{url('/')}}">Home</a>
                         </li>
                         <li><a href="work.html">Work</a></li>
                         <li class="has-dropdown">
@@ -19,7 +19,7 @@
                                 <li><a href="#">API</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="{{url('about')}}">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         @if (Auth::check())
                         <li class="has-dropdown">

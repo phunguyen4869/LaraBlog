@@ -26,3 +26,25 @@ $('#upload').change(function () {
         }
     });
 });
+
+function removeRow(id, url) {
+    if (confirm('Bạn có chắc chắn muốn xóa mục này không?')) {
+        $.ajax({
+            type: 'DELETE',
+            datatype: 'json',
+            data: {
+                id
+            },
+            url: url,
+            success: function (result) {
+                console.log(result);
+                if (result.error === false) {
+                    alert(result.message);
+                    $(".card-body").load(location.href + " .card-body>*", "");
+                } else {
+                    alert('Xoá không thành công, vui lòng thử lại');
+                }
+            }
+        });
+    }
+}
