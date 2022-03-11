@@ -21,7 +21,9 @@ use App\Http\Controllers\Admin\DashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('about', [HomeController::class, 'about'])->name('home');
+Route::get('about', [HomeController::class, 'about']);
+
+Route::get('contact', [HomeController::class, 'contact']);
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [LoginController::class, 'index'])->name('login');

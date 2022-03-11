@@ -5,7 +5,8 @@
         <aside id="fh5co-hero">
             <div class="flexslider">
                 <ul class="slides">
-                    <li style="background-image: url(images/img_bg_3.jpg);">
+                    <li
+                        style="background-image: url({{ url('/storage/background-image/about-slider.JPG') }});">
                         <div class="overlay-gradient"></div>
                         <div class="container-fluids">
                             <div class="row">
@@ -13,7 +14,7 @@
                                     class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
                                     <div class="slider-text-inner text-center">
                                         <h1>About</h1>
-                                        <h2>Free html5 templates Made by <a
+                                        <h2>My templates Made by <a
                                                 href="http://freehtml5.co/"
                                                 target="_blank">freehtml5.co</a>
                                         </h2>
@@ -28,110 +29,36 @@
         <div id="fh5co-about">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center heading-section">
-                    <h3>Our History</h3>
-                    <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts.</p>
+                    <h3>My History</h3>
+                    <p>Everyone has their own story. I would like to tell my story.
+                    </p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center animate-box">
-                    <p><img src="images/cover_bg_3.jpg"
+                    <p><img src="{{ url('/storage/background-image/about-story.jpg') }}"
                             alt="Free HTML5 Bootstrap Template"
                             class="img-responsive"></p>
                 </div>
                 <div class="col-md-8 col-md-offset-2 text-center animate-box">
                     <div class="about-desc">
-                        <h3>Hi! I'm Kathy</h3>
-                        <p>I am a French Designer. Facilis ipsum reprehenderit nemo
-                            molestias. Aut cum mollitia reprehenderit. Eos cumque
-                            dicta adipisci architecto culpa amet. Dignissimos
-                            asperiores vitae velit veniam totam fuga molestias
-                            accusamus alias autem provident. Odit ab aliquam dolor
-                            eius.</p>
+                        <h3>Hi! I'm Phu Nguyen</h3>
+                        <p>I'm a information technology engineer. Graduating in
+                            2021, but unfortunately, the outbreak of
+                            the covid epidemic caused a huge impact. However, thanks
+                            to that, I have more time to learn more about the
+                            knowledge that I missed when I was in university.</p>
                         <p>
                         <ul class="fh5co-social-icons">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            <li><a href="https://www.facebook.com/PhuIT3299"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://github.com/phunguyen4869"><i class="icon-github"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/phunguyen4869/"><i class="icon-linkedin"></i></a></li>
                         </ul>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- END container-wrap -->
-
-    <div class="container-wrap">
-        <footer id="fh5co-footer" role="contentinfo">
-            <div class="row">
-                <div class="col-md-3 fh5co-widget">
-                    <h4>About Neat</h4>
-                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia
-                        reprehenderit. Eos cumque dicta adipisci architecto culpa
-                        amet.</p>
-                </div>
-                <div class="col-md-3 col-md-push-1">
-                    <h4>Latest Posts</h4>
-                    <ul class="fh5co-footer-links">
-                        <li><a href="#">Amazing Templates</a></li>
-                        <li><a href="#">100+ Free Download Templates</a></li>
-                        <li><a href="#">Neat is now available</a></li>
-                        <li><a href="#">Download 1000+ icons</a></li>
-                        <li><a href="#">Big Deal for this month of March, Join Us
-                                here</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-3 col-md-push-1">
-                    <h4>Links</h4>
-                    <ul class="fh5co-footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About us</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-3">
-                    <h4>Contact Information</h4>
-                    <ul class="fh5co-footer-links">
-                        <li>198 West 21th Street, <br> Suite 721 New York NY 10016
-                        </li>
-                        <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                        <li><a href="mailto:info@yoursite.com">info@yoursite.com</a>
-                        </li>
-                        <li><a href="http://gettemplates.co">gettemplates.co</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="row copyright">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <small class="block">&copy; 2016 Free HTML5. All
-                            Rights Reserved.</small>
-                        <small class="block">Designed by <a
-                                href="http://freehtml5.co/"
-                                target="_blank">FreeHTML5.co</a> Demo Images: <a
-                                href="http://unsplash.co/"
-                                target="_blank">Unsplash</a></small>
-                    </p>
-                    <p>
-                    <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </footer>
     </div><!-- END container-wrap -->
 @endsection

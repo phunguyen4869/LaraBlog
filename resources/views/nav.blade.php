@@ -20,7 +20,7 @@
                             </ul>
                         </li>
                         <li><a href="{{url('about')}}">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{url('contact')}}">Contact</a></li>
                         @if (Auth::check())
                         <li class="has-dropdown">
                             <a>{{Auth::user()->name}}</a>

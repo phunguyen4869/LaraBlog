@@ -11,7 +11,7 @@ class UploadServices
         try {
             //Kiểm tra file có tồn tại hay không
             if ($request->hasFile('files')) {
-                //Tạo tên thư mục chứa file theo ngày
+                //Tạo thư mục chứa file có đường dẫn được tạo theo ngày upload
                 $path = 'uploads/' . date("Y/m/d");
 
                 //Đếm số lượng files khi multiple uploads
