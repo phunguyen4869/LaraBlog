@@ -37,8 +37,8 @@
                   data-widget="treeview" role="menu" data-accordion="false">
                   <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                  <li class="nav-item menu-open">
-                      <a href="#" class="nav-link active">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
                           <i class="fa-solid fa-user"></i>
                           <p>
                               Users manage
@@ -48,26 +48,79 @@
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
                               <a href="./index.html" class="nav-link">
-                                <i class="fa-solid fa-list"></i>
+                                  <i class="fa-solid fa-list"></i>
                                   <p>Users list</p>
                               </a>
                           </li>
                           <li class="nav-item">
                               <a href="./index2.html" class="nav-link">
-                                <i class="fa-solid fa-plus"></i>
+                                  <i class="fa-solid fa-plus"></i>
                                   <p>Add user</p>
                               </a>
                           </li>
                           <li class="nav-item">
                               <a href="./index3.html" class="nav-link">
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                  <i class="fa-solid fa-pen-to-square"></i>
                                   <p>Edit user</p>
                               </a>
                           </li>
                       </ul>
                   </li>
-                  <li class="nav-item menu-open">
-                      <a href="#" class="nav-link active">
+
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                          <i class="fa-solid fa-bars-staggered"></i>
+                          <p>
+                              Categories manage
+                              <i class="right fas fa-angle-left"></i>
+                          </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                              <a href="{{ url('admin/category') }}"
+                                  class="nav-link">
+                                  <i class="fa-solid fa-list"></i>
+                                  <p>Categories list</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{ url('admin/category/create') }}"
+                                  class="nav-link">
+                                  <i class="fa-solid fa-plus"></i>
+                                  <p>Add category</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-file"></i>
+                        <p>
+                            Posts manage
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('admin/post') }}"
+                                class="nav-link">
+                                <i class="fa-solid fa-list"></i>
+                                <p>Posts list</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/post/create') }}"
+                                class="nav-link">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>Add new post</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
                           <i class="fa-solid fa-images"></i>
                           <p>
                               Sliders manage
@@ -83,7 +136,8 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{ url('admin/slider/create') }}" class="nav-link">
+                              <a href="{{ url('admin/slider/create') }}"
+                                  class="nav-link">
                                   <i class="fa-solid fa-plus"></i>
                                   <p>Add slider</p>
                               </a>

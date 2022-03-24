@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UploadController;
@@ -20,6 +23,10 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::prefix('blog')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('blog');
+});
 
 Route::get('about', [HomeController::class, 'about']);
 
@@ -49,6 +56,30 @@ Route::prefix('admin')->group(function () {
             Route::post('edit/{id}', [SliderController::class, 'update']);
 
             Route::delete('destroy', [SliderController::class, 'destroy']);
+        });
+
+        Route::prefix('category')->group(function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('category.index');
+
+            Route::get('create', [CategoryController::class, 'create']);
+            Route::post('create', [CategoryController::class, 'store']);
+
+            Route::get('edit/{category}', [CategoryController::class, 'edit']);
+            Route::post('edit/{category}', [CategoryController::class, 'update']);
+
+            Route::delete('destroy', [CategoryController::class, 'destroy']);
+        });
+
+        Route::prefix('post')->group(function () {
+            Route::get('/', [PostController::class, 'index'])->name('post.index');
+
+            Route::get('create', [PostController::class, 'create']);
+            Route::post('create', [PostController::class, 'store']);
+
+            Route::get('edit/{post}', [PostController::class, 'edit']);
+            Route::post('edit/{post}', [PostController::class, 'update']);
+
+            Route::delete('destroy', [PostController::class, 'destroy']);
         });
     });
 });

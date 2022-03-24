@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard</title>
+<title>{{$title}}</title>
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet"
@@ -15,3 +15,5 @@
 <link rel="stylesheet" href="{{ url('admin/dist/css/adminlte.min.css') }}">
 {{-- X-CSRF-TOKEN --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
+@yield('head')

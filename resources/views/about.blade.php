@@ -13,8 +13,8 @@
                                 <div
                                     class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
                                     <div class="slider-text-inner text-center">
-                                        <h1>About</h1>
-                                        <h2>My templates Made by <a
+                                        <h1 style="color: white">About</h1>
+                                        <h2 style="color: white">My templates Made by <a
                                                 href="http://freehtml5.co/"
                                                 target="_blank">freehtml5.co</a>
                                         </h2>
@@ -29,7 +29,7 @@
         <div id="fh5co-about">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center heading-section">
-                    <h3>My History</h3>
+                    <h3>My Story</h3>
                     <p>Everyone has their own story. I would like to tell my story.
                     </p>
                 </div>

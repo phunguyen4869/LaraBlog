@@ -10,3 +10,5 @@
   <script src="{{ url('Admin/dist/js/adminlte.js') }}"></script>
   {{-- Custom script --}}
   <script src="{{ url('Admin/js/main.js') }}"></script>
+
+  @yield('footer')

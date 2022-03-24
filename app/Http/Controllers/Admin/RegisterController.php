@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $result = $this->user->insert($request);
 
         if ($result) {
-            return redirect()->back()->with('success', 'Register Success');
+            return redirect()->route('login')->with('success', 'Register Success');
         } else {
             return redirect()->back()->with('error', 'Register Failed');
         }

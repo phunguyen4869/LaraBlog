@@ -14,6 +14,13 @@ class SliderServices
         return $sliders;
     }
 
+    public function get()
+    {
+        $sliders = Slider::where('active', 1)->get();
+
+        return $sliders;
+    }
+
     public function getById($id)
     {
         $slider = Slider::find($id);

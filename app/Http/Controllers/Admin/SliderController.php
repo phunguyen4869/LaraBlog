@@ -24,7 +24,8 @@ class SliderController extends Controller
         $sliders = $this->slider->getAll();
 
         return view('Admin.Slider.list', [
-            'sliders' => $sliders
+            'sliders' => $sliders,
+            'title' => 'Sliders List'
         ]);
     }
 
@@ -35,7 +36,9 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('Admin.Slider.create');
+        return view('Admin.Slider.create', [
+            'title' => 'Create Slider',
+        ]);
     }
 
     /**
@@ -78,7 +81,8 @@ class SliderController extends Controller
         $slider = $this->slider->getById($id);
 
         return view('Admin.Slider.edit', [
-            'slider' => $slider
+            'slider' => $slider,
+            'title' => 'Edit Slider'
         ]);
     }
 
