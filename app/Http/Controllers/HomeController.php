@@ -19,7 +19,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        echo 'hehe';
         $sliders = $this->slider->get();
 
         $categories = $this->category->getAll();
