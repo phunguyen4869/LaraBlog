@@ -20,7 +20,7 @@ return new class extends Migration
 
         //Foreign Key post
         Schema::table('post_category', function($table) {
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->primary(['post_id', 'category_id']);
         });
 
         //Foreign Key post

@@ -23,8 +23,8 @@ return new class extends Migration
             $table->tinyText('summary')->nullable();
             $table->tinyInteger('published')->default(0);
             $table->longText('content');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
-            $table->timestamp('published_at');
         });
 
         //Foreign Key author_id

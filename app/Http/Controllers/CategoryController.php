@@ -6,8 +6,6 @@ use App\Http\Services\CategoryServices;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-use function PHPSTORM_META\registerArgumentsSet;
-
 class CategoryController extends Controller
 {
     protected $category;

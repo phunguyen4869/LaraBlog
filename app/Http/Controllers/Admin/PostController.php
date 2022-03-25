@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\PostServices;
+use App\Http\Controllers\Controller;
+use App\Http\Services\CategoryServices;
 
 class PostController extends Controller
 {
+    protected $post;
+
+    public function __construct(PostServices $post, CategoryServices $category)
+    {
+        $this->post = $post;
+        $this->category = $category;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +33,12 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.post.create', ['title' => 'Create new post']);
+        $categories = $this->category->getAllParent();
+
+        return view('admin.post.create', [
+            'title' => 'Create new post',
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -35,7 +49,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author_id = $request->user()['id'];
+
+        $result = $this->post->create($request, $author_id);
+
+        if ($result) {
+            return redirect()->route('admin.post.index')->with('success', 'Create new post successfully');
+        } else {
+            return redirect()->back()->with('error', 'Create new post failed');
+        }
     }
 
     /**

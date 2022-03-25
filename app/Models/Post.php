@@ -17,6 +17,7 @@ class Post extends Model
         'slug',
         'summary',
         'published',
+        'published_at',
         'content',
     ];
 
@@ -28,10 +29,5 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(PostComment::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
     }
 }
