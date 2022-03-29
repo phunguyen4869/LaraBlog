@@ -25,7 +25,7 @@
                                 class="form-control">
                                 <option value="{{$category->parent_id}}" selected>Not Change</option>
                                 @foreach ($allCategories as $allCategory)
-                                    @if ($allCategory->id != $category->id)
+                                    @if ($allCategory->id != $category->id && $allCategory->id != 2)
                                         <option value="{{ $allCategory->id }}">
                                             {{ $allCategory->title }}</option>
                                     @endif

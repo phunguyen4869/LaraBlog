@@ -5,6 +5,7 @@
         <div class="card-header">
             <h3 class="card-title">Add slider</h3>
         </div>
+        @include('admin.alert')
         <!-- /.card-header -->
         <!-- form start -->
         <form action="create" method="POST">
@@ -12,13 +13,15 @@
                 <div class="form-group">
                     <label for="title">Slider title</label>
                     <input type="text" name="title" id="title" class="form-control"
-                        placeholder="Enter title">
+                        placeholder="Enter title" value="{{old('title')}}">
                 </div>
+
                 <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" name="description" id="description"
-                        class="form-control" placeholder="Description">
+                        class="form-control" placeholder="Description" value="{{old('description')}}">
                 </div>
+
                 <div class="form-group">
                     <label for="upload">Picture</label>
                     <div class="input-group">

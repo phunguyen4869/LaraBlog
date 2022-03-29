@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">{{$title}}</h3>
+                    <h3 class="card-title">{{ $title }}</h3>
                 </div>
                 @include('admin.alert')
                 <!-- /.card-header -->
@@ -15,7 +15,8 @@
                         <div class="form-group">
                             <label for="title">Category title</label>
                             <input type="text" name="title" id="title"
-                                class="form-control" placeholder="Enter title">
+                                class="form-control" placeholder="Enter title"
+                                value="{{ old('title') }}">
                         </div>
 
                         <div class="form-group">
@@ -32,13 +33,15 @@
                         <div class="form-group">
                             <label for="meta_title">Meta title</label>
                             <input type="text" name="meta_title" id="meta_title"
-                                class="form-control" placeholder="Meta title">
+                                class="form-control" placeholder="Meta title"
+                                value="{{ old('meta_title') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="content">Category Content</label>
                             <input type="text" name="content" id="content"
-                                class="form-control" placeholder="Content">
+                                class="form-control" placeholder="Content"
+                                value="{{ old('content') }}">
                         </div>
                     </div>
                     <!-- /.card-body -->

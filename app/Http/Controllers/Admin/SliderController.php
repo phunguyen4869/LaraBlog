@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Services\SliderServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SliderController extends Controller
 {
@@ -50,6 +51,16 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'image' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator);
+        }
+
         $result = $this->slider->create($request);
 
         if ($result) {
@@ -95,6 +106,16 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'image' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator);
+        }
+
         $result = $this->slider->update($request, $id);
 
         if ($result) {

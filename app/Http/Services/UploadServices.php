@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 
 class UploadServices
 {
-    public function store($request)
+    public function storeImage($request)
     {
         try {
             //Kiểm tra file có tồn tại hay không
@@ -22,17 +22,25 @@ class UploadServices
                         ->file('files')[$i]
                         ->getClientOriginalName();
 
-                    //Lưu file vào thư mục
-                    $request->file('files')[$i]->storeAs(
-                        'public/' . $path,
-                        $name[$i]
-                    );
+                    $extension = $request->file('files')[$i]->extension();
+
+                    if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg') {
+                        //Lưu file vào thư mục
+                        $request->file('files')[$i]->storeAs(
+                            'public/' . $path,
+                            $name[$i]
+                        );
+                    } else {
+                        return false;
+                    }
+
                     $url[] = '/storage/' . $path . '/' . $name[$i];
                 }
                 return $url;
             }
         } catch (\Exception $error) {
             Log::error($error->getMessage());
+
             return false;
         }
     }

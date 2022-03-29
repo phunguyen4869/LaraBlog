@@ -6,7 +6,7 @@
             {{ $child->title }}
             @if (count($child->childs))
                 @include(
-                    'Admin.Post.manageChildCategory',
+                    'Admin.Post.childCategoryCreate',
                     [
                         'childs' => $child->childs,
                     ]

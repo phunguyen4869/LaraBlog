@@ -28,7 +28,7 @@ $('#upload').change(function () {
 });
 
 function removeRow(id, url) {
-    if (confirm('Bạn có chắc chắn muốn xóa mục này không?')) {
+    if (confirm('Are you sure to delete this row?')) {
         $.ajax({
             type: 'DELETE',
             datatype: 'json',
@@ -42,7 +42,7 @@ function removeRow(id, url) {
                     alert(result.message);
                     $(".card-body").load(location.href + " .card-body>*", "");
                 } else {
-                    alert('Xoá không thành công, vui lòng thử lại');
+                    alert('Delete not successfull, please try again');
                 }
             }
         });

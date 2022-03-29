@@ -4,7 +4,7 @@
     <div class="col-md-12 align-items-right">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Categories list</h3>
+                <h3 class="card-title">Posts list</h3>
             </div>
             @include('Admin.alert')
             <!-- /.card-header -->
@@ -17,30 +17,28 @@
                             <th>Title</th>
                             <th>Meta Title</th>
                             <th>Slug</th>
-                            <th>Content</th>
+                            <th>Summary</th>
                             <th style="width: 120px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($posts as $post)
                             <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->parent_id }}</td>
-                                <td>{{ $category->title }}</td>
-                                <td>{{ $category->meta_title }}</td>
-                                <td>{{ $category->slug }}</td>
-                                <td>{{ $category->content }}</td>
-                                @if ($category->id != 1 && $category->id != 2)
-                                    <td><a class="btn btn-primary btn-sm"
-                                            href="{{ url('admin/category/edit/' . $category->id) }}">
-                                            <i class="far fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-danger btn-sm"
-                                            onclick="removeRow({{ $category->id }}, '/admin/category/destroy')">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                @endif
+                                <td>{{ $post->id }}</td>
+                                <td>{{ $post->author_id }}</td>
+                                <td>{{ $post->title }}</td>
+                                <td>{{ $post->meta_title }}</td>
+                                <td>{{ $post->slug }}</td>
+                                <td>{{ $post->summary }}</td>
+                                <td><a class="btn btn-primary btn-sm"
+                                        href="{{ url('admin/post/edit/' . $post->id) }}">
+                                        <i class="far fa-edit"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-sm"
+                                        onclick="removeRow({{ $post->id }}, '/admin/post/destroy')">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -22,5 +22,13 @@ class CategorySeeder extends Seeder
             'slug' => 'root-category',
             'content' => 'If category has this element is parent_id, it is a root category.',
         ]);
+
+        DB::table('categories')->insert([
+            'parent_id' => 1,
+            'title' => 'Undefine Category',
+            'meta_title' => 'Undefine Category',
+            'slug' => 'undefine-category',
+            'content' => 'If category has this element is parent_id, it is a undefine category.',
+        ]);
     }
 }
