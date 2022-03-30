@@ -21,7 +21,7 @@ $('#upload').change(function () {
 
                 $('#image').val(results.url);
             } else {
-                alert('Upload error');
+                alert('Upload fail, please try again');
             }
         }
     });
@@ -42,7 +42,7 @@ function removeRow(id, url) {
                     alert(result.message);
                     $(".card-body").load(location.href + " .card-body>*", "");
                 } else {
-                    alert('Delete not successfull, please try again');
+                    alert('Delete not success, please try again');
                 }
             }
         });

@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UploadController;
@@ -80,6 +81,18 @@ Route::prefix('admin')->group(function () {
             Route::post('edit/{post}', [PostController::class, 'update']);
 
             Route::delete('destroy', [PostController::class, 'destroy'])->name('post.destroy');
+        });
+
+        Route::prefix('user')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('user.index');
+
+            Route::get('create', [UserController::class, 'create'])->name('user.create');
+            Route::post('create', [UserController::class, 'store']);
+
+            Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+            Route::post('edit/{user}', [UserController::class, 'update']);
+
+            Route::delete('destroy', [UserController::class, 'destroy'])->name('user.destroy');
         });
     });
 });

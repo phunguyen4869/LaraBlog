@@ -27,7 +27,6 @@ class UploadController extends Controller
         } else {
             return response()->json([
                 'error' => true,
-                'message' => 'Upload failed',
             ]);
         }
     }

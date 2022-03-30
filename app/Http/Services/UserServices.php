@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Log;
 
 class UserServices
 {
+    public function getAll()
+    {
+        $users = User::all();
+
+        return $users;
+    }
+
     public function insert($request)
     {
         try {
