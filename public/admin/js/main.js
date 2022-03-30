@@ -12,7 +12,7 @@ $('#upload').change(function () {
         contentType: false,
         processData: false,
         type: 'POST',
-        datatype: 'JSON',
+        datatype: 'json',
         data: form,
         url: '/admin/upload',
         success: function (results) {

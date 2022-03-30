@@ -8,7 +8,7 @@
         @include('admin.alert')
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="create" method="POST">
+        <form action="#" method="POST">
             <div class="card-body">
                 <div class="form-group">
                     <label for="title">Slider title</label>

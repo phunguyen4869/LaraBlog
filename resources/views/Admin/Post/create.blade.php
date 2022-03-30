@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- form start -->
-    <form action="create" method="POST">
+    <form action="#" method="POST">
         <div class="row">
 
             <div class="col-md-8">

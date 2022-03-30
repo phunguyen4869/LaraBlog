@@ -16,7 +16,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Intro</th>
-                        <th>Active</th>
+                        <th>Avatar</th>
                         <th style="width: 120px">Action</th>
                     </tr>
                     </thead>
@@ -26,17 +26,9 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td><img src="{{ asset($user->image) }}"
-                                     alt="{{ $user->title }}" width="100px">
-                            </td>
-                            <td>
-                                @if ($user->active == 1)
-                                    <span
-                                        class="badge badge-success">Active</span>
-                                @else
-                                    <span
-                                        class="badge badge-danger">Inactive</span>
-                                @endif
+                            <td>{{ $user->intro }}</td>
+                            <td><img src="{{ asset($user->avatar) }}"
+                                     alt="{{ $user->name }}" width="100px">
                             </td>
                             <td><a class="btn btn-primary btn-sm"
                                    href="{{ url('admin/user/edit/' . $user->id) }}">

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Services\UserServices;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use App\Http\Services\UserServices;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -37,7 +39,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.User.UserManage.create', [
+            'title' => 'User Create',
+        ]);
     }
 
     /**
@@ -46,9 +50,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $result = $this->user->create($request);
+
+        if ($result) {
+            return redirect()->route('user.index')
+                ->with('success', 'Create user successfully');
+        } else {
+            return redirect()->back()
+                ->with('error', 'Create user failed');
+        }
     }
 
     /**
@@ -70,7 +82,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = $this->user->getById($id);
+
+        return view('Admin.User.UserManage.edit', [
+            'title' => 'User Edit',
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -82,7 +99,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!empty($request->input('password'))) {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255',
+                'password' => 'required|string|min:6',
+                're-password' => 'required|string|same:password',
+            ]);
+        } else {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255',
+            ]);
+        }
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator);
+        }
+
+        $result = $this->user->update($request, $id);
+
+        if ($result) {
+            return redirect()->route('user.index')
+                ->with('success', 'Update user successfully');
+        } else {
+            return redirect()->back()
+                ->with('error', 'Update user failed');
+        }
     }
 
     /**
@@ -91,8 +136,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $result = $this->user->delete($request->id);
+
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Delete user successfully',
+            ]);
+        } else {
+            return response()->json([
+                'error' => true,
+            ]);
+        }
     }
 }
