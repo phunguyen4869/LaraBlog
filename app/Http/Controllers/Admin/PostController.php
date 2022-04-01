@@ -30,7 +30,6 @@ class PostController extends Controller
         return view('admin.post.list', [
             'title' => 'List Post',
             'posts' => $this->post->getAll(),
-            'categories' => $this->category->getAll(),
         ]);
     }
 
@@ -85,10 +84,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        $post = $this->post->getById($id);
-        $post_categories = $this->post->getPostCategory($id);
+        $post = $this->post->getById($post->id);
+        $post_categories = $this->post->getPostCategory($post->id);
         $categories = $this->category->getAllParent();
 
         return view('admin.post.edit', [

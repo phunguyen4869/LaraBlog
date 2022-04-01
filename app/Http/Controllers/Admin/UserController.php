@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserServices;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -80,10 +81,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = $this->user->getById($id);
-
         return view('Admin.User.UserManage.edit', [
             'title' => 'User Edit',
             'user' => $user,
@@ -97,7 +96,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         if (!empty($request->input('password'))) {
             $validator = Validator::make($request->all(), [
@@ -119,7 +118,7 @@ class UserController extends Controller
                 ->withErrors($validator);
         }
 
-        $result = $this->user->update($request, $id);
+        $result = $this->user->update($request, $user->id);
 
         if ($result) {
             return redirect()->route('user.index')

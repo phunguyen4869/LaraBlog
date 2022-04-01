@@ -11,7 +11,7 @@ class CategoryServices
 {
     public function getAll()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(5);
 
         return $categories;
     }

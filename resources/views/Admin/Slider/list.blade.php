@@ -53,7 +53,7 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer clearfix">
+            {{-- <div class="card-footer clearfix">
                 <ul class="pagination pagination-sm m-0 float-right">
                     <li class="page-item"><a class="page-link"
                             href="#">«</a></li>
@@ -66,7 +66,8 @@
                     <li class="page-item"><a class="page-link"
                             href="#">»</a></li>
                 </ul>
-            </div>
+            </div> --}}
+            {{ $sliders->links() }}
         </div>
         <!-- /.card -->
     </div>

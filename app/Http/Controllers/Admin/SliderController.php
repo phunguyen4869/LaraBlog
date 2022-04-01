@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Slider;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Services\SliderServices;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class SliderController extends Controller
@@ -87,10 +88,8 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Slider $slider)
     {
-        $slider = $this->slider->getById($id);
-
         return view('Admin.Slider.edit', [
             'slider' => $slider,
             'title' => 'Edit Slider'
@@ -104,7 +103,7 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Slider $slider)
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255',
@@ -116,7 +115,7 @@ class SliderController extends Controller
                 ->withErrors($validator);
         }
 
-        $result = $this->slider->update($request, $id);
+        $result = $this->slider->update($request, $slider->id);
 
         if ($result) {
             return redirect()->route('slider.index')->with('success', 'Slider updated successfully');

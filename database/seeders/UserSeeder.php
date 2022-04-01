@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,8 +18,10 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Phu Nguyen',
-            'email' => 'phunguyen4869@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('123123'),
         ]);
+
+        UserFactory::times(10)->create();
     }
 }

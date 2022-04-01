@@ -14,6 +14,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Create new post</h3>
                     </div>
+                    @include('Admin.alert')
                     <!-- /.card-header -->
 
                     <div class="card-body">
@@ -85,8 +86,8 @@
                     @endforeach
                 </ul>
             </div>
-            @csrf
         </div>
+        @csrf
     </form>
 @endsection
 

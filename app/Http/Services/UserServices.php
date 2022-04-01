@@ -9,7 +9,7 @@ class UserServices
 {
     public function getAll()
     {
-        $users = User::all();
+        $users = User::paginate(5);
 
         return $users;
     }

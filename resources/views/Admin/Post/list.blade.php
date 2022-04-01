@@ -1,5 +1,14 @@
 @extends('Admin.main')
 
+@section('head')
+    <style>
+        .hidden {
+            display: none;
+        }
+
+    </style>
+@endsection
+
 @section('content')
     <div class="col-md-12 align-items-right">
         <div class="card">
@@ -13,7 +22,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px">ID</th>
-                            <th>Parent ID</th>
+                            <th>Author ID</th>
                             <th>Title</th>
                             <th>Meta Title</th>
                             <th>Slug</th>
@@ -45,7 +54,7 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer clearfix">
+            {{-- <div class="card-footer clearfix">
                 <ul class="pagination pagination-sm m-0 float-right">
                     <li class="page-item"><a class="page-link"
                             href="#">«</a></li>
@@ -58,7 +67,8 @@
                     <li class="page-item"><a class="page-link"
                             href="#">»</a></li>
                 </ul>
-            </div>
+            </div> --}}
+            {{ $posts->links() }}
         </div>
         <!-- /.card -->
     </div>

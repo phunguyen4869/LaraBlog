@@ -12,7 +12,7 @@ class PostServices
 {
     public function getAll()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(5);
 
         return $posts;
     }
@@ -46,7 +46,11 @@ class PostServices
         $summary = $request->input('summary');
         $published = $request->input('published');
         $content = $request->input('content');
-        $category_id = $request->input('category_id');
+        if (!empty($request->input('category_id'))) {
+            $category_id = $request->input('category_id');
+        } else {
+            $category_id = [2];
+        }
 
         if ($published == 'on') {
             $published_at = now();
