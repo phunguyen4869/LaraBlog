@@ -1,14 +1,5 @@
 @extends('Admin.main')
 
-@section('head')
-    <style>
-        .hidden {
-            display: none;
-        }
-
-    </style>
-@endsection
-
 @section('content')
     <div class="col-md-12 align-items-right">
         <div class="card">

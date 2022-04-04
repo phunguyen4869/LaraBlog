@@ -9,7 +9,7 @@ class SliderServices
 {
     public function getAll()
     {
-        $sliders = Slider::all();
+        $sliders = Slider::paginate(5);
 
         return $sliders;
     }

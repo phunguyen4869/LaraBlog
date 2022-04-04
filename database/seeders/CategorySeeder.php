@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\CategoryFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -30,5 +31,7 @@ class CategorySeeder extends Seeder
             'slug' => 'undefine-category',
             'content' => 'If category has this element is parent_id, it is a undefine category.',
         ]);
+
+        CategoryFactory::times(10)->create();
     }
 }

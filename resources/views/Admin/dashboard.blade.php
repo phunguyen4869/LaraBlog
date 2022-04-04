@@ -1,5 +1,6 @@
 @extends('Admin.main')
 
 @section('content')
-    Admin Dashboard
+    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP
+    v{{ PHP_VERSION }})
 @endsection

@@ -35,27 +35,31 @@ class SearchServices
     {
         $slider = Slider::where('title', 'like', '%' . $search . '%')->paginate(5);
 
-        return $slider->withPath('/admin/search?search=' . $search . '&section=slider');
+        // return $slider->withPath('/admin/search?search=' . $search . '&section=slider');
+        return $slider->withQueryString();
     }
 
     public function searchCategories($search)
     {
-        $categories = Category::where('name', 'like', '%' . $search . '%')->paginate(5);
+        $categories = Category::where('title', 'like', '%' . $search . '%')->paginate(5);
 
-        return $categories->withPath('/admin/search?search=' . $search . '&section=category');
+        // return $categories->withPath('/admin/search?search=' . $search . '&section=category');
+        return $categories->withQueryString();
     }
 
     public function searchPosts($search)
     {
         $posts = Post::where('title', 'like', "%$search%")->paginate(5);
 
-        return $posts->withPath('/admin/search?search=' . $search . '&section=post');
+        // return $posts->withPath('/admin/search?search=' . $search . '&section=post');
+        return $posts->withQueryString();
     }
 
     public function searchUsers($search)
     {
         $user = User::where('name', 'like', "%$search%")->paginate(5);
 
-        return $user->withPath('/admin/search?search=' . $search . '&section=user');
+        // return $user->withPath('/admin/search?search=' . $search . '&section=user');
+        return $user->withQueryString();
     }
 }
